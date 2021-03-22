@@ -1,0 +1,22 @@
+.container {
+	width: 100%;
+	max-width: 1350px;
+	margin: 0 auto;
+	padding: 0 20px;
+
+
+	&--small {
+		max-width: 1130px;
+	}
+
+	@include media(xl) {
+		padding: 0 18px;
+	}
+
+
+	/*@each $breakpoint, $maxWidth in $containerMaxWidths {
+		@include media($breakpoint) {
+			max-width: $maxWidth;
+		}
+	}*/
+}

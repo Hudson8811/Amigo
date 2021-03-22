@@ -1,0 +1,102 @@
+extends templates/main
+block variables
+	- let pageTitle = TITLE_PART + ' | Главная';
+
+
+block header
+	include modules/header
+
+block content
+	section.interior
+		.interior__inner.container
+			.interior__main
+				h1.interior__heading.heading
+					span Интерьер
+					span с характером:
+				.interior__content
+					.interior__subheading Как расставить акценты
+						.interior__image
+							img(src="img/interior-2.jpg", srcset="img/interior-2@2x.jpg 2x", width="403", height="310", alt="")
+
+						.interior__text
+							p Может ли интерьер говорить? Конечно! Более того, он может быть услышанным, если над ним трудится настоящая команда профессионалов, которая точно знает, как сделать пространство красивым и удобным, а также выразить его индивидуальность.
+
+							p Помимо самовыражения дизайнеров, архитекторов, важно заложить в помещение и характер владельца. Это можно сделать с помощью грамотно расставленных акцентов. Мы решили разобраться в этом вопросе вместе с экспертами в области интерьера и AMIGO©, компанией, поддерживающей высокие стандарты сервиса и качества продукции. Смотрите интервью с практикующими дизайнерами, где они поделятся своими лайфхаками и инструментами для создания особенных интерьеров.
+			.interior__aside
+				img(src="img/interior-1.jpg", srcset="img/interior-1@2x.jpg 2x", width="534", height="932", alt="")
+			.interior__sidebar
+				.interior__sidebar-info
+					.interior__sidebar-hint.section-hint Поделиться с друзьями
+					ul.interior__social.social
+						li.social__item
+							a.social__link(href="#", target="_blank")
+								+icon('ok')(width="12", height="21")
+								span.visually-hidden Одноклассники
+						li.social__item
+							a.social__link(href="#", target="_blank")
+								+icon('tw')(width="20", height="16")
+								span.visually-hidden Твиттер
+						li.social__item
+							a.social__link(href="#", target="_blank")
+								+icon('fb')(width="12", height="22")
+								span.visually-hidden Фейсбук
+						li.social__item
+							a.social__link(href="#", target="_blank")
+								+icon('vk')(width="22", height="13")
+								span.visually-hidden Вконтакте
+
+				.interior__sidebar-image
+					img(src="img/interior-3.jpg", srcset="img/interior-3@2x.jpg 2x", width="251", height="604", alt="")
+	section.pro-style
+		.pro-style__inner.container
+			.pro-style__main
+				h2.pro-style__heading.heading
+					span В
+					| стиле профи
+				.pro-style__text Наши эксперты рассказали о том, какие инструменты помогают им создавать уникальные интерьеры: как происходит выбор цветов, материалов, мебели, декоративных элементов и, в том числе, разных типов жалюзи, созданных по индивидуальному заказу. Смотрите видео с полезными советами.
+				.pro-style__image
+					img(src="img/interior-1.jpg", srcset="img/interior-1@2x.jpg 2x", width="534", height="932", alt="")
+			.pro-style__aside
+				.pro-style__slider.swiper-container.__js_pro-style-slider
+					.swiper-wrapper
+						.pro-style__slide.slide.swiper-slide
+					.pro-style__paginate
+					.pro-style__nav
+						button.pro-style__nav-btn.pro-style__nav-btn--prev(type="button", aria-label="prev")
+							+icon('arrow-right')(width="39", height="39")
+						button.pro-style__nav-btn.pro-style__nav-btn--next(type="button", aria-label="next")
+							+icon('arrow-right')(width="39", height="39")
+			.pro-style__sidebar
+				.pro-style__sidebar-info
+					.pro-style__sidebar-hint.section-hint Интерьер с характером
+	section.light-control
+		.light-control__inner.container
+			.light-control__content
+				h2.light-control__heading Управление светом для характера помещения
+				.light-control__text
+					p Приглушить или добавить яркости? Воплощать самые смелые фантазии дизайнеров и запросы клиентов уже более 20 лет помогает компания Amigo©. Рулонные шторы, горизонтальные и вертикальные жалюзи из любых материалов, плиссе, гофре и многое другое — все это создается и монтируется по высочайшим стандартами качества. Профессиональные солнцезащитные системы выбирают как частные заказчики, так и крупные дизайнерские студии.
+
+					p Amigo© создает любые рулонные шторы и жалюзи на заказ, достаточно сделать замер и выбрать ткань. Решение найдется в кратчайшие сроки. В каталогах лидера в сфере солнцезащитных технологий представлены самые актуальные тенденции и идеи по оформлению окон в интерьере, а более 1200 материалов в ассортименте помогут сделать интерьер по-настоящему индивидуальным.
+			.light-control__main-image
+				img(src="img/light-control-main.jpg", srcset="img/light-control-main@2x.jpg 2x", width="851", height="788", alt="")
+			.light-control__insert
+				.light-control__text У компании можно найти как классические решения, так и современные: например, жалюзи, которые можно открыть с пульта, кнопки управления или даже со смартфона. Такое решение будет очень удобно для больших панорамных окон или высоких мансардных. Моторизованные варианты можно запрограммировать с помощью таймера, добавляя свет в помещение или приглушая его в нужное вам время. Если владелец квартиры против сверления стен и карнизов, у Amigo© есть решение в виде солнцезащитных систем, которые крепятся на оконное стекло.
+			.light-control__grid
+				.light-control__grid-col
+					img(src="img/light-control-1.jpg", srcset="img/light-control-1@2x.jpg 2x", width="360", height="465", alt="")
+				.light-control__grid-col
+					img(src="img/light-control-2.jpg", srcset="img/light-control-2@2x.jpg 2x", width="360", height="465", alt="")
+				.light-control__grid-col.light-control__grid-col--text
+					| Пространство с характером — это в первую очередь детали и акценты, которые делают дом лучше, придают неповторимую эстетику и наполняют помещение темпераментом. Главное — выбрать качественные и надежные материалы.
+
+					a.light-control__btn.btn(href="#", target="_blank") Подробнее
+				.light-control__grid-col
+					img(src="img/light-control-3.jpg", srcset="img/light-control-3@2x.jpg 2x", width="360", height="559", alt="")
+			.light-control__bottom-image
+				img(src="img/light-control-bottom.jpg", srcset="img/light-control-bottom@2x.jpg 2x", width="950", height="487", alt="")
+			.light-control__sidebar
+				.light-control__sidebar-info
+					.light-control__sidebar-hint.section-hint hsmedia
+block footer
+	//-include modules/footer
+

@@ -1,0 +1,9 @@
+.webpage {
+	$self: &;
+
+	@include media-max(md) {
+		p {
+			color: red;
+		}
+	}
+}

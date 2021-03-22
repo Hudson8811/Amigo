@@ -1,0 +1,27 @@
+.menu-toggle {
+	display: block;
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+		fill: $color-default-white;
+
+		@include transition(fill);
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+
+		svg {
+			fill: $color-blue;
+		}
+	}
+}

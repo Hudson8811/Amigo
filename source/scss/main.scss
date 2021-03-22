@@ -1,0 +1,26 @@
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+
+@import "common/fonts";
+@import "utils/normalize";
+@import "common/global";
+@import "common/utils";
+@import "vendor/swiper-bundle";
+//@import "common/container";
+
+/* Components */
+/*
+@import "blocks/button";
+@import "blocks/heading";
+@import "blocks/overlay";
+@import "blocks/social";
+@import "blocks/btn";
+@import "blocks/field";*/
+
+/* Blocks */
+
+//@import "blocks/header";
+//@import "blocks/footer";
+
+@import "blocks/webpage";

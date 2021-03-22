@@ -1,0 +1,49 @@
+.visually-hidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+.relative {
+	position: relative;
+}
+
+.d-none {
+	display: none !important;
+}
+
+/* swiper */
+.swiper-pagination {
+	position: relative;
+}
+
+.swiper-container-horizontal > .swiper-scrollbar {
+}
+
+.swiper-pagination-bullet {
+	width: 5px;
+	height: 5px;
+	margin: 0 1px;
+	//background-color: $color-gray-c9;
+	opacity: 1;
+
+	@include media(md) {
+	}
+
+	&-active {
+		width: 9px;
+		height: 9px;
+		margin: 0 2px;
+		background-color: $color-hasai;
+	}
+
+	&:hover,
+	&:focus {
+		outline: none;
+	}
+}

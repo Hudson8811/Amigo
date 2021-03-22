@@ -1,0 +1,112 @@
+.footer {
+	$self: &;
+	padding: 40px 0;
+	background-color: $color-dark2;
+
+	@include media(lg) {
+		padding: 80px 0;
+	}
+
+	&__inner {
+		@include media(sm) {
+			display: flex;
+		}
+
+		@include media(md) {
+		}
+
+		@include media(lg) {
+		}
+
+		@include media(xl) {
+		}
+	}
+
+	&__logo {
+		display: none;
+
+		@include media(sm) {
+			display: block;
+			margin-right: 60px;
+		}
+
+		@include media(md) {
+			display: block;
+			margin-right: 9.16666vw;
+		}
+
+		@include media(xl) {
+			margin-right: 132px;
+		}
+	}
+
+	&__menu {
+		$menu: &;
+		display: none;
+
+		@include media(md) {
+			@include list-reset;
+
+			display: block;
+			margin: 0 auto;
+		}
+
+		@include media(lg) {
+			columns: 2;
+			column-gap: 4.86111vw;
+		}
+
+		@include media(xl) {
+			column-gap: 70px;
+		}
+
+		&-item {
+			margin-bottom: 8px;
+
+			@include media(lg) {
+				margin-bottom: 28px;
+			}
+
+			&--current {
+				#{$menu}-link {
+					opacity: 1;
+
+					&:not([href]) {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		&-link {
+			@include text(13px, 1.23076);
+			font-weight: 500;
+			text-transform: uppercase;
+			opacity: 0.5;
+
+			@include transition(opacity);
+
+			@include hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__contacts {
+	}
+
+	&__phone {
+	}
+
+	&__worktime {
+		margin-top: 16px;
+		margin-bottom: 32px;
+	}
+
+	&__address {
+		margin-bottom: 32px;
+	}
+
+	&__email {
+	}
+}
