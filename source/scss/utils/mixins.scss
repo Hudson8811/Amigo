@@ -37,6 +37,10 @@
 
 			@content;
 		}
+
+		&:active {
+			opacity: 0.7;
+		}
 	}
 }
 

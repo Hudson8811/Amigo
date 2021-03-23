@@ -1,0 +1,157 @@
+.light-control {
+	$self: &;
+	padding-top: vw(136);
+
+	&__inner {
+		position: relative;
+		display: grid;
+		grid-template-columns: vw(850) vw(740);
+		grid-template-rows: repeat(4, auto);
+		column-gap: vw(78);
+		padding-right: vw(60);
+
+		& > * {
+			align-self: start;
+		}
+	}
+
+	&__content {
+		grid-column-start: 2;
+		grid-row-start: 1;
+
+		#{$self}__text {
+			padding-right: vw(10);
+		}
+	}
+
+	&__main-image {
+		grid-column-start: 1;
+		grid-row-start: 1;
+
+		img {
+			@include image-block;
+		}
+	}
+
+	&__insert {
+		padding: vw(156) 0 vw(94);
+
+		& > * {
+			margin-left: auto;
+			margin-right: vw(37);
+		}
+	}
+
+	&__grid {
+		grid-column-start: 2;
+		grid-row-start: 2;
+		grid-row-end: 4;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
+
+		margin-top: vw(-138);
+
+		&-col {
+			width: vw(360);
+
+			&:nth-child(n + 3) {
+				margin-top: vw(22);
+			}
+
+			&--text {
+				padding-top: vw(72);
+				padding-right: vw(31);
+
+				color: $color-dark;
+				letter-spacing: 0.03em;
+			}
+
+			img {
+				@include image-block;
+			}
+
+			p {
+				margin: 0;
+			}
+		}
+	}
+
+	&__btn {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: vw(45);
+		padding: vw(15) vw(31) vw(11);
+
+		font-family: $font-family--secondary;
+
+		@include text(vw(18), 1);
+		font-weight: 400;
+		text-transform: uppercase;
+		text-align: center;
+
+		border: solid 1px $color-hasai;
+		border-radius: vw(12);
+
+		@include transition(all);
+
+		@include hover {
+			background-color: $color-hasai;
+			color: $color-default-white;
+		}
+	}
+
+	&__bottom-image {
+		grid-column-start: 1;
+		grid-row-start: 3;
+
+		margin-left: vw(-96);
+
+		img {
+			display: block;
+			width: vw(950);
+			height: auto;
+		}
+	}
+
+	&__sidebar {
+		position: absolute;
+		right: vw(10);
+		bottom: vw(175);
+	}
+
+	&__heading {
+		position: relative;
+		min-width: vw(870);
+		margin-bottom: vw(32);
+
+		font-size: vw(72);
+		line-height: 1;
+
+		&::after {
+			content: "";
+			display: inline-block;
+			width: vw(51);
+			height: vw(51);
+			margin-left: vw(16);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("../img/star.svg");
+		}
+	}
+
+	&__text {
+		max-width: vw(586);
+		color: $color-dark;
+		letter-spacing: 0.03em;
+
+		p {
+			margin: 0;
+		}
+
+		p + p {
+			margin-top: vw(38);
+		}
+	}
+}
