@@ -124,7 +124,8 @@
 	&__heading {
 		position: relative;
 		min-width: vw(870);
-		margin-bottom: vw(32);
+		margin-bottom: vw(39);
+		margin-top: vw(-3);
 
 		font-size: vw(72);
 		line-height: 1;
@@ -134,7 +135,7 @@
 			display: inline-block;
 			width: vw(51);
 			height: vw(51);
-			margin-left: vw(16);
+			margin-left: vw(20);
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-image: url("../img/star.svg");
@@ -151,7 +152,7 @@
 		}
 
 		p + p {
-			margin-top: vw(38);
+			margin-top: vw(19);
 		}
 	}
 }

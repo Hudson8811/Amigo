@@ -13,12 +13,13 @@
 
 	&__aside {
 		width: vw(1072);
+		padding-top: vw(4);
 	}
 
 	&__sidebar {
 		position: absolute;
 		right: vw(158);
-		bottom: vw(450);
+		bottom: vw(317);
 
 		&-info {
 		}
@@ -27,7 +28,7 @@
 	}
 
 	&__heading {
-		margin: 0 0 vw(52);
+		margin: 0 0 vw(45);
 
 		span {
 			position: relative;
@@ -36,7 +37,7 @@
 				content: "";
 				position: absolute;
 				left: vw(92);
-				top: vw(17);
+				top: vw(21);
 				width: vw(51);
 				height: vw(51);
 				background-repeat: no-repeat;
@@ -48,7 +49,8 @@
 
 	&__text {
 		max-width: vw(320);
-		margin-bottom: vw(90);
+		margin-bottom: vw(80);
+		padding-left: vw(8);
 		color: $color-dark;
 		letter-spacing: 0.03em;
 
@@ -64,6 +66,7 @@
 	&__image {
 		width: 100%;
 		max-width: vw(308);
+		margin-left: vw(4);
 
 		img {
 			@include image-block;
@@ -95,15 +98,15 @@
 
 		&-btn {
 			display: block;
-			width: 39px;
-			height: 39px;
+			width: vw(39);
+			height: vw(39);
 			padding: 0;
 			border: none;
 			background-color: $color-smoky;
 			cursor: pointer;
 
 			& + & {
-				margin-left: 11px;
+				margin-left: vw(11);
 			}
 
 			&.swiper-button-disabled {

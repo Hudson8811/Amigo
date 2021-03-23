@@ -4,7 +4,7 @@
 	@include list-reset;
 
 	&__item {
-		margin-bottom: 6px;
+		margin-bottom: vw(6);
 
 		&:last-child {
 			margin-bottom: 0;
@@ -13,16 +13,15 @@
 
 	&__link {
 		display: flex;
-		width: 39px;
-		height: 39px;
+		width: vw(39);
+		height: vw(39);
 		justify-content: center;
-		border-radius: 5px;
-		border: solid 3px $color-grey;
+		border-radius: vw(5);
+		border: solid vw(3) $color-grey;
 
 		@include transition(border-color);
 
 		svg {
-			display: block;
 			align-self: center;
 			fill: $color-grey;
 

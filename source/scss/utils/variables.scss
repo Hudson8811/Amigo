@@ -29,7 +29,7 @@ $font-family--main: "Roboto", "Arial", sans-serif;
 $font-family--secondary: "Geometria", "Arial", sans-serif;
 
 $font-size-base: calc((17 / 1920) * 100vw); //17px;
-$line-height-base: 1.11764; //19px
+$line-height-base: calc((19 / 1920) * 100vw); //19px
 
 /////////////////////////////
 $default-transition-settings: 0.3s ease;
