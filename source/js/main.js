@@ -1,5 +1,6 @@
 'use strict';
 
+
 var body = $('body');
 var DURATION = 300;
 var mobileBreakpoint = 992;
@@ -100,6 +101,23 @@ function getScrollbarWidth() {
 		},
 	});
 })();*/
+
+(function() {
+	var slider = new Swiper ('.__js_pro-style-slider', {
+		slidesPerView: 1,
+		spaceBetween: 0,
+		speed: 300,
+		loop: false,
+		pagination: {
+			el: '.pro-style__paginate',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.pro-style__nav-btn--next',
+			prevEl: '.pro-style__nav-btn--prev',
+		},
+	})
+})();
 
 
 

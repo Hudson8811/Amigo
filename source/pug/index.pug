@@ -59,7 +59,12 @@ block content
 			.pro-style__aside
 				.pro-style__slider.swiper-container.__js_pro-style-slider
 					.swiper-wrapper
-						.pro-style__slide.slide.swiper-slide
+						- let i = 0;
+						while i < 5
+							include modules/slide
+							- i++;
+
+
 					.pro-style__paginate
 					.pro-style__nav
 						button.pro-style__nav-btn.pro-style__nav-btn--prev(type="button", aria-label="prev")

@@ -1,0 +1,69 @@
+.slide {
+	box-sizing: border-box;
+
+	&__image {
+		position: relative;
+		margin-bottom: vw(17);
+		border-style: solid;
+		border-color: $color-default-white;
+		border-top-width: vw(14);
+		border-right-width: vw(6);
+		border-bottom-width: vw(3);
+		border-left-width: vw(2);
+
+		img {
+			@include image-block;
+		}
+	}
+
+	&__video {
+		position: absolute;
+		bottom: 0;
+		right: 18px;
+		width: vw(830);
+	}
+
+	&__author {
+		display: flex;
+
+		&-image {
+			width: vw(198);
+			margin-right: vw(37);
+			flex-shrink: 0;
+
+			img {
+				@include image-block;
+			}
+		}
+
+		&-main {
+			padding-top: vw(12);
+			flex-grow: 1;
+		}
+
+		&-name {
+			margin: 0 0 vw(37);
+			font-family: $font-family--secondary;
+
+			@include text(vw(46), 1.04347);
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+
+		&-text {
+			max-width: vw(464);
+			font-size: vw(16);
+			line-height: 1.125;
+			color: $color-dark;
+			letter-spacing: 0.03em;
+
+			p {
+				margin: 0;
+			}
+
+			p + p {
+				margin-top: vw(38);
+			}
+		}
+	}
+}

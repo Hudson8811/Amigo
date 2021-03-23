@@ -1,0 +1,140 @@
+.pro-style {
+	&__inner {
+		position: relative;
+		display: flex;
+		padding-right: vw(241);
+	}
+
+	&__main {
+		width: 100%;
+		max-width: vw(440);
+		padding-right: vw(24);
+	}
+
+	&__aside {
+		width: vw(1072);
+	}
+
+	&__sidebar {
+		position: absolute;
+		right: vw(158);
+		bottom: vw(450);
+
+		&-info {
+		}
+		&-hint {
+		}
+	}
+
+	&__heading {
+		margin: 0 0 vw(52);
+
+		span {
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: vw(92);
+				top: vw(17);
+				width: vw(51);
+				height: vw(51);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-image: url("../img/star.svg");
+			}
+		}
+	}
+
+	&__text {
+		max-width: vw(320);
+		margin-bottom: vw(90);
+		color: $color-dark;
+		letter-spacing: 0.03em;
+
+		p {
+			margin: 0;
+		}
+
+		p + p {
+			margin-top: vw(38);
+		}
+	}
+
+	&__image {
+		width: 100%;
+		max-width: vw(308);
+
+		img {
+			@include image-block;
+		}
+	}
+
+	&__slider {
+	}
+	&__slide {
+	}
+	&__paginate {
+		position: absolute;
+		z-index: 1;
+		bottom: vw(170) !important;
+		right: vw(37);
+		left: auto !important;
+		display: flex;
+		justify-content: flex-end;
+		width: auto !important;
+	}
+
+	&__nav {
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		right: vw(37);
+		display: flex;
+		justify-content: flex-end;
+
+		&-btn {
+			display: block;
+			width: 39px;
+			height: 39px;
+			padding: 0;
+			border: none;
+			background-color: $color-smoky;
+			cursor: pointer;
+
+			& + & {
+				margin-left: 11px;
+			}
+
+			&.swiper-button-disabled {
+				pointer-events: none;
+
+				svg {
+					fill: $color-grey;
+				}
+			}
+
+			svg {
+				@include image-block;
+
+				fill: $color-hasai;
+
+				@include transition(fill);
+			}
+
+			@include hover {
+				svg {
+					fill: $color-hasai-2;
+				}
+			}
+
+			&--prev {
+				svg {
+					transform: scale(-1, 1);
+				}
+			}
+			&--next {
+			}
+		}
+	}
+}

@@ -26,20 +26,14 @@
 }
 
 .swiper-pagination-bullet {
-	width: 5px;
-	height: 5px;
-	margin: 0 1px;
-	//background-color: $color-gray-c9;
-	opacity: 1;
-
-	@include media(md) {
-	}
+	width: vw(8) !important;
+	height: vw(8) !important;
+	margin: 0 0 0 vw(42) !important;
+	background-color: $color-grey !important;
+	opacity: 1 !important;
 
 	&-active {
-		width: 9px;
-		height: 9px;
-		margin: 0 2px;
-		background-color: $color-hasai;
+		background-color: $color-hasai !important;
 	}
 
 	&:hover,

@@ -1,0 +1,74 @@
+.video {
+	position: relative;
+	//padding: 14px;
+	box-sizing: border-box;
+
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: solid vw(14) $color-smoky2;
+		pointer-events: none;
+	}
+
+	video {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	&__poster {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			display: block;
+			width: 100%;
+			height: auto;
+			//object-fit: fill;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		width: vw(138);
+		height: vw(138);
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		appearance: none;
+		cursor: pointer;
+
+		svg {
+			@include image-block;
+
+			fill: $color-default-white;
+			@include transition(fill);
+		}
+
+		@include hover {
+			svg {
+				fill: $color-hasai;
+			}
+		}
+	}
+}
