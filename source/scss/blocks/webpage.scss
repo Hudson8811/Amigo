@@ -1,9 +1,5 @@
 .webpage {
 	$self: &;
 
-	@include media-max(md) {
-		p {
-			color: red;
-		}
-	}
+	//padding-top: vw(214);
 }

@@ -7,20 +7,23 @@
 @import "common/global";
 @import "common/utils";
 @import "vendor/swiper-bundle";
-//@import "common/container";
+@import "common/container";
 
 /* Components */
-/*
-@import "blocks/button";
+
 @import "blocks/heading";
-@import "blocks/overlay";
-@import "blocks/social";
+@import "blocks/section-hint";
+/*@import "blocks/overlay";
 @import "blocks/btn";
 @import "blocks/field";*/
 
 /* Blocks */
+@import "blocks/social";
+@import "blocks/logo";
+@import "blocks/nav";
+@import "blocks/interior";
 
-//@import "blocks/header";
+@import "blocks/header";
 //@import "blocks/footer";
 
 @import "blocks/webpage";

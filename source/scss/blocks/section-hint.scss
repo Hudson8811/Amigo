@@ -1,0 +1,9 @@
+.section-hint {
+	font-family: $font-family--secondary;
+
+	@include text(vw(17), 1.05882);
+	text-transform: uppercase;
+	font-weight: 400;
+	writing-mode: vertical-lr;
+	transform: rotate(180deg);
+}

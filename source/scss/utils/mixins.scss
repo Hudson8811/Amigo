@@ -33,6 +33,8 @@
 	@media (min-width: 992px) {
 		&:hover,
 		&:focus {
+			outline: none;
+
 			@content;
 		}
 	}

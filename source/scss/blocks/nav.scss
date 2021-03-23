@@ -1,0 +1,29 @@
+.nav {
+	&__list {
+		@include list-reset;
+		display: flex;
+	}
+
+	&__item {
+		max-width: vw(290);
+		margin-right: vw(34);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__link {
+		font-family: $font-family--secondary;
+
+		@include text(vw(18), 1);
+		text-transform: uppercase;
+		font-weight: 400;
+
+		@include transition(color);
+
+		@include hover {
+			color: $color-hasai-2;
+		}
+	}
+}
