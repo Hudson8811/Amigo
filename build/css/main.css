@@ -1660,6 +1660,18 @@ button.swiper-pagination-bullet {
   width: auto !important;
 }
 
+.pro-style__fraction {
+  position: absolute;
+  z-index: 2;
+  right: 0.9375vw;
+  top: 1.09375vw;
+  font-family: "Geometria", "Arial", sans-serif;
+  font-size: 3.02083vw;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 400;
+}
+
 .pro-style__nav {
   position: absolute;
   z-index: 1;

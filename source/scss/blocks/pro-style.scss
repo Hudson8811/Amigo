@@ -88,6 +88,17 @@
 		width: auto !important;
 	}
 
+	&__fraction {
+		position: absolute;
+		z-index: 2;
+		right: vw(18);
+		top: vw(21);
+		font-family: $font-family--secondary;
+
+		@include text(vw(58), 1, $color-default-white);
+		font-weight: 400;
+	}
+
 	&__nav {
 		position: absolute;
 		z-index: 1;

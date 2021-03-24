@@ -103,20 +103,42 @@ function getScrollbarWidth() {
 })();*/
 
 (function() {
-	var slider = new Swiper ('.__js_pro-style-slider', {
-		slidesPerView: 1,
-		spaceBetween: 0,
-		speed: 300,
-		loop: false,
-		pagination: {
-			el: '.pro-style__paginate',
-			clickable: true,
-		},
-		navigation: {
-			nextEl: '.pro-style__nav-btn--next',
-			prevEl: '.pro-style__nav-btn--prev',
-		},
-	})
+	var sl = document.querySelector('.__js_pro-style-slider');
+
+	if (sl) {
+		var slideCount = sl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
+		var fraction = document.querySelector('.pro-style__fraction');
+
+		if (fraction) {
+			var current = fraction.querySelector('.pro-style__fraction-current');
+			var total = fraction.querySelector('.pro-style__fraction-total');
+		}
+
+		var slider = new Swiper ('.__js_pro-style-slider', {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 300,
+			loop: true,
+			pagination: {
+				el: '.pro-style__paginate',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.pro-style__nav-btn--next',
+				prevEl: '.pro-style__nav-btn--prev',
+			},
+			on: {
+				afterInit: function() {
+					current.textContent = this.realIndex + 1;
+					total.textContent = slideCount;
+				},
+				slideChange: function() {
+					current.textContent = this.realIndex + 1;
+				},
+			}
+		});
+	}
+
 })();
 
 
