@@ -109,6 +109,9 @@ function getScrollbarWidth() {
 		var slideCount = sl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
 		var fraction = document.querySelector('.pro-style__fraction');
 
+
+		var video,videoPoster, videoBtn;
+
 		if (fraction) {
 			var current = fraction.querySelector('.pro-style__fraction-current');
 			var total = fraction.querySelector('.pro-style__fraction-total');
@@ -118,7 +121,7 @@ function getScrollbarWidth() {
 			slidesPerView: 1,
 			spaceBetween: 0,
 			speed: 300,
-			loop: true,
+			loop: false,
 			pagination: {
 				el: '.pro-style__paginate',
 				clickable: true,
@@ -131,13 +134,45 @@ function getScrollbarWidth() {
 				afterInit: function() {
 					current.textContent = this.realIndex + 1;
 					total.textContent = slideCount;
+
+					video = $('.video video');
+					videoPoster = $('.video__poster');
+					videoBtn = $('.video__btn');
+
+
+					videoBtn.on('click', function() {
+						$(this).parent().fadeOut(DURATION).addClass('hide');
+						$(this).parent().siblings().trigger('play');
+					});
+
+					video.on('click', function() {
+						if (videoPoster.hasClass('hide')) {
+							videoPoster.fadeIn(DURATION).removeClass('hide');
+						}
+
+						video.trigger('pause');
+					});
+
 				},
 				slideChange: function() {
 					current.textContent = this.realIndex + 1;
+
+					video = $('.video video');
+					videoPoster = $('.video__poster');
+
+					if (videoPoster.hasClass('hide')) {
+						videoPoster.fadeIn(DURATION).removeClass('hide');
+					}
+
+					video.trigger('pause');
 				},
 			}
 		});
+
+
 	}
+
+	//video.on('click')
 
 })();
 
