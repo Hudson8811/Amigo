@@ -28,6 +28,31 @@
 			@include transition(fill);
 		}
 
+		&--ok {
+			svg {
+				width: vw(12);
+				height: vw(21);
+			}
+		}
+		&--tw {
+			svg {
+				width: vw(20);
+				height: vw(16);
+			}
+		}
+		&--fb {
+			svg {
+				width: vw(12);
+				height: vw(22);
+			}
+		}
+		&--vk {
+			svg {
+				width: vw(22);
+				height: vw(13);
+			}
+		}
+
 		@include hover {
 			border-color: $color-hasai;
 

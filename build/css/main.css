@@ -1182,6 +1182,26 @@ button.swiper-pagination-bullet {
   transition: fill 0.3s ease;
 }
 
+.social__link--ok svg {
+  width: 0.625vw;
+  height: 1.09375vw;
+}
+
+.social__link--tw svg {
+  width: 1.04167vw;
+  height: 0.83333vw;
+}
+
+.social__link--fb svg {
+  width: 0.625vw;
+  height: 1.14583vw;
+}
+
+.social__link--vk svg {
+  width: 1.14583vw;
+  height: 0.67708vw;
+}
+
 .social__link:focus {
   outline: none;
   border-color: #19647d;
