@@ -1,6 +1,7 @@
 .light-control {
 	$self: &;
 	padding-top: vw(136);
+	overflow: hidden;
 
 	@include media-max(md) {
 		padding-top: vw-m(24);

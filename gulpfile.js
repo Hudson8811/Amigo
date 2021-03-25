@@ -160,4 +160,4 @@ gulp.task('copy:img', function() {
 });
 
 
-gulp.task('default', gulp.series('clean', 'copy', 'copy:img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', 'sass',  'pug', 'server'));
+gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', 'sass',  'pug', 'server'));

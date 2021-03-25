@@ -7,15 +7,13 @@
 @import "common/global";
 @import "common/utils";
 @import "vendor/swiper-bundle";
+@import "vendor/aos";
 @import "common/container";
 
 /* Components */
 
 @import "blocks/heading";
 @import "blocks/section-hint";
-/*@import "blocks/overlay";
-@import "blocks/btn";
-@import "blocks/field";*/
 
 /* Blocks */
 @import "blocks/social";
@@ -29,6 +27,5 @@
 @import "blocks/light-control";
 
 @import "blocks/header";
-//@import "blocks/footer";
 
 @import "blocks/webpage";
