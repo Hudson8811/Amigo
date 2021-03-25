@@ -11,6 +11,11 @@
 		border-bottom-width: vw(3);
 		border-left-width: vw(2);
 
+		@include media-max(md) {
+			margin-bottom: vw-m(71);
+			border: none;
+		}
+
 		img {
 			@include image-block;
 		}
@@ -21,15 +26,52 @@
 		bottom: 0;
 		right: vw(18);
 		width: vw(830);
+
+		@include media-max(md) {
+			right: vw-m(8);
+			width: vw-m(293);
+		}
 	}
 
 	&__author {
 		display: flex;
 
+		@include media-max(md) {
+			display: block;
+			padding: 0 vw-m(15);
+		}
+
 		&-image {
 			width: vw(198);
 			margin-right: vw(37);
 			flex-shrink: 0;
+
+			@include media-max(md) {
+				position: relative;
+				width: vw-m(165);
+				margin-bottom: vw-m(25);
+
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+
+					width: vw-m(29);
+					height: vw-m(29);
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-image: url("../img/star.svg");
+				}
+
+				&::after {
+					right: vw-m(-121);
+					top: vw-m(84);
+				}
+				&::before {
+					right: vw-m(-74);
+					top: vw-m(36);
+				}
+			}
 
 			img {
 				@include image-block;
@@ -48,6 +90,12 @@
 			@include text(vw(46), 1.04347);
 			text-transform: uppercase;
 			font-weight: 500;
+
+			@include media-max(md) {
+				margin-bottom: vw-m(20);
+				font-size: vw-m(22);
+				line-height: 1.36363;
+			}
 		}
 
 		&-text {
@@ -57,12 +105,23 @@
 			color: $color-dark;
 			letter-spacing: 0.03em;
 
+			@include media-max(md) {
+				max-width: none;
+
+				font-size: vw-m(15);
+				line-height: vw-m(18);
+			}
+
 			p {
 				margin: 0;
 			}
 
 			p + p {
 				margin-top: vw(38);
+
+				@include media-max(md) {
+					margin-top: vw-m(25);
+				}
 			}
 		}
 	}

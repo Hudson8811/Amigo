@@ -6,4 +6,8 @@
 	font-weight: 400;
 	writing-mode: vertical-lr;
 	transform: rotate(180deg);
+
+	@include media-max(md) {
+		font-size: vw-m(12);
+	}
 }

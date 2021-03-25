@@ -34,6 +34,22 @@
 		@include media-max(md) {
 			margin-top: 0;
 			margin-left: vw-m(77);
+			margin-right: 0;
+		}
+	}
+
+	&__x {
+		display: none;
+
+		@include media-max(md) {
+			display: block;
+			margin-left: vw-m(27);
+			font-family: $font-family--secondary;
+
+			@include text(vw-m(22), 1);
+			font-weight: 400;
+			text-transform: uppercase;
+			align-self: flex-end;
 		}
 	}
 

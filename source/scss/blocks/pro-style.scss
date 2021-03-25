@@ -3,17 +3,36 @@
 		position: relative;
 		display: flex;
 		padding-right: vw(241);
+
+		@include media-max(md) {
+			display: block;
+			padding-right: vw-m(15);
+		}
 	}
 
 	&__main {
 		width: 100%;
 		max-width: vw(440);
 		padding-right: vw(24);
+
+		@include media-max(md) {
+			display: flex;
+			flex-wrap: wrap;
+			max-width: none;
+			margin-bottom: vw-m(24);
+			padding-right: 0;
+		}
 	}
 
 	&__aside {
 		width: vw(1072);
 		padding-top: vw(4);
+
+		@include media-max(md) {
+			width: 100vw;
+			margin-left: vw-m(-15);
+			padding-top: 0;
+		}
 	}
 
 	&__sidebar {
@@ -21,17 +40,36 @@
 		right: vw(158);
 		bottom: vw(317);
 
-		&-info {
-		}
-		&-hint {
+		@include media-max(md) {
+			right: vw-m(10);
+			bottom: vw-m(220);
 		}
 	}
 
 	&__heading {
 		margin: 0 0 vw(45);
 
+		br {
+			display: none;
+		}
+
+		@include media-max(md) {
+			position: relative;
+			width: 100%;
+			margin-bottom: vw-m(20);
+
+			br {
+				display: block;
+			}
+		}
+
 		span {
 			position: relative;
+
+			@include media-max(md) {
+				position: static;
+				display: inline-block;
+			}
 
 			&::before {
 				content: "";
@@ -43,6 +81,14 @@
 				background-repeat: no-repeat;
 				background-size: cover;
 				background-image: url("../img/star.svg");
+
+				@include media-max(md) {
+					left: auto;
+					right: vw-m(92);
+					top: vw-m(21);
+					width: vw-m(29);
+					height: vw-m(29);
+				}
 			}
 		}
 	}
@@ -53,6 +99,10 @@
 		padding-left: vw(8);
 		color: $color-dark;
 		letter-spacing: 0.03em;
+
+		@include media-max(md) {
+			max-width: vw-m(173);
+		}
 
 		p {
 			margin: 0;
@@ -70,6 +120,25 @@
 
 		img {
 			@include image-block;
+
+			&:last-child {
+				display: none;
+			}
+		}
+
+		@include media-max(md) {
+			max-width: vw-m(177);
+			margin-right: vw-m(-15);
+			margin-left: auto;
+
+			img {
+				&:first-child {
+					display: none;
+				}
+				&:last-child {
+					display: block;
+				}
+			}
 		}
 	}
 
@@ -86,6 +155,14 @@
 		display: flex;
 		justify-content: flex-end;
 		width: auto !important;
+
+		@include media-max(md) {
+			top: vw-m(269);
+			left: vw-m(17) !important;
+			right: auto;
+			bottom: auto !important;
+			justify-content: flex-start;
+		}
 	}
 
 	&__fraction {
@@ -97,6 +174,12 @@
 
 		@include text(vw(58), 1, $color-default-white);
 		font-weight: 400;
+
+		@include media-max(md) {
+			top: vw-m(26);
+			right: vw-m(9);
+			font-size: vw-m(22);
+		}
 	}
 
 	&__nav {
@@ -107,6 +190,12 @@
 		display: flex;
 		justify-content: flex-end;
 
+		@include media-max(md) {
+			right: vw-m(68);
+			bottom: auto;
+			top: vw-m(257);
+		}
+
 		&-btn {
 			display: block;
 			width: vw(39);
@@ -116,8 +205,17 @@
 			background-color: $color-smoky;
 			cursor: pointer;
 
+			@include media-max(md) {
+				width: vw-m(29);
+				height: vw-m(29);
+			}
+
 			& + & {
 				margin-left: vw(11);
+
+				@include media-max(md) {
+					margin-left: vw-m(9);
+				}
 			}
 
 			&.swiper-button-disabled {

@@ -19,6 +19,7 @@
 
 			padding-right: vw-m(15);
 			padding-bottom: vw-m(24);
+			padding-top: vw-m(3);
 		}
 	}
 
@@ -195,7 +196,7 @@
 		font-weight: 400;
 
 		@include media-max(md) {
-			margin-bottom: vw-m(24);
+			margin-bottom: vw-m(20);
 			padding-left: vw-m(30);
 			font-size: vw-m(22);
 		}
@@ -235,9 +236,16 @@
 		@include media-max(md) {
 			max-width: none;
 			width: 100vw;
+			height: vw-m(251);
 			margin-left: vw-m(-15);
-			margin-top: vw-m(26);
+			margin-top: vw-m(30);
 			margin-right: 0;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 
@@ -275,8 +283,8 @@
 			transform: translateY(vw(-5));
 
 			@include media-max(md) {
-				margin-top: vw-m(25);
-				transform: translateY(vw-m(-5));
+				margin-top: vw-m(16);
+				transform: translateY(0);
 			}
 		}
 	}

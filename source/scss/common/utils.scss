@@ -32,6 +32,12 @@
 	background-color: $color-grey !important;
 	opacity: 1 !important;
 
+	@include media-max(md) {
+		width: vw-m(6) !important;
+		height: vw-m(6) !important;
+		margin: 0 vw-m(30) 0 0 !important;
+	}
+
 	&-active {
 		background-color: $color-hasai !important;
 	}

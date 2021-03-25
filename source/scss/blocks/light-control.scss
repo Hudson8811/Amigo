@@ -2,6 +2,10 @@
 	$self: &;
 	padding-top: vw(136);
 
+	@include media-max(md) {
+		padding-top: vw-m(24);
+	}
+
 	&__inner {
 		position: relative;
 		display: grid;
@@ -13,14 +17,43 @@
 		& > * {
 			align-self: start;
 		}
+
+		@include media-max(md) {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+		}
 	}
 
 	&__content {
 		grid-column-start: 2;
 		grid-row-start: 1;
 
+		@include media-max(md) {
+			margin-bottom: 27px;
+		}
+
 		#{$self}__text {
 			padding-right: vw(10);
+
+			@include media-max(md) {
+				position: relative;
+				padding-right: 0;
+
+				&::before {
+					content: "";
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					width: vw-m(29);
+					height: vw-m(29);
+					margin-top: vw-m(-3);
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-image: url("../img/star.svg");
+				}
+			}
 		}
 	}
 
@@ -31,6 +64,13 @@
 		img {
 			@include image-block;
 		}
+
+		@include media-max(md) {
+			width: 100vw;
+			margin-left: vw-m(-15);
+			margin-bottom: vw-m(35);
+			order: -1;
+		}
 	}
 
 	&__insert {
@@ -39,6 +79,17 @@
 		& > * {
 			margin-left: auto;
 			margin-right: vw(37);
+		}
+
+		@include media-max(md) {
+			margin-bottom: vw-m(26);
+			padding: 0;
+			order: 1;
+
+			& > * {
+				margin-left: 0;
+				margin-right: 0;
+			}
 		}
 	}
 
@@ -53,27 +104,84 @@
 
 		margin-top: vw(-138);
 
+		@include media-max(md) {
+			width: 100vw;
+			margin-left: vw-m(-15);
+			margin-top: 0;
+			margin-bottom: vw-m(32);
+		}
+
 		&-col {
 			width: vw(360);
-
-			&:nth-child(n + 3) {
-				margin-top: vw(22);
-			}
-
-			&--text {
-				padding-top: vw(72);
-				padding-right: vw(31);
-
-				color: $color-dark;
-				letter-spacing: 0.03em;
-			}
 
 			img {
 				@include image-block;
 			}
 
+			@include media-max(md) {
+				width: vw-m(178);
+			}
+
 			p {
 				margin: 0;
+			}
+		}
+	}
+
+	&__description {
+		grid-column-start: 2;
+		grid-row-start: 3;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		width: 100%;
+
+		@include media-max(md) {
+			width: 100vw;
+			margin-left: vw-m(-15);
+			margin-bottom: vw-m(29);
+			flex-direction: column-reverse;
+			order: 2;
+		}
+
+		&-text {
+			width: vw(360);
+			padding-right: vw(31);
+
+			color: $color-dark;
+			letter-spacing: 0.03em;
+
+			@include media-max(md) {
+				width: 100%;
+
+				padding: 0 vw-m(15);
+			}
+
+			p {
+				margin: 0;
+			}
+		}
+
+		&-image {
+			width: vw(360);
+			margin-top: vw(-76);
+
+			@include media-max(md) {
+				position: relative;
+				width: 100%;
+				height: vw-m(469);
+				margin-top: 0;
+				margin-bottom: vw-m(26);
+				overflow: hidden;
+
+				img {
+					margin-top: vw-m(-37);
+				}
+			}
+
+			img {
+				@include image-block;
 			}
 		}
 	}
@@ -96,6 +204,14 @@
 
 		@include transition(all);
 
+		@include media-max(md) {
+			margin-top: vw-m(25);
+			padding: vw-m(15) vw-m(31) vw-m(11);
+
+			@include text(vw-m(18), 1);
+			border-radius: vw-m(12);
+		}
+
 		@include hover {
 			background-color: $color-hasai;
 			color: $color-default-white;
@@ -113,12 +229,37 @@
 			width: vw(950);
 			height: auto;
 		}
+
+		@include media-max(md) {
+			width: 100vw;
+			margin-left: vw-m(-15);
+			order: 3;
+			overflow: hidden;
+			height: vw-m(218);
+
+			img {
+				width: auto;
+				height: 100%;
+			}
+		}
 	}
 
 	&__sidebar {
 		position: absolute;
 		right: vw(10);
 		bottom: vw(175);
+
+		@include media-max(md) {
+			right: vw-m(14);
+			bottom: vw-m(-30);
+			transform: translateY(100%);
+		}
+
+		&-hint {
+			@include media-max(md) {
+				@include text(vw-m(17), 1.05882);
+			}
+		}
 	}
 
 	&__heading {
@@ -130,6 +271,15 @@
 		font-size: vw(72);
 		line-height: 1;
 
+		@include media-max(md) {
+			min-width: 0;
+			margin-bottom: vw-m(15);
+			margin-top: 0;
+
+			font-size: vw-m(22);
+			line-height: 1.36363;
+		}
+
 		&::after {
 			content: "";
 			display: inline-block;
@@ -139,6 +289,10 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-image: url("../img/star.svg");
+
+			@include media-max(md) {
+				display: none;
+			}
 		}
 	}
 
@@ -147,12 +301,20 @@
 		color: $color-dark;
 		letter-spacing: 0.03em;
 
+		@include media-max(md) {
+			max-width: none;
+		}
+
 		p {
 			margin: 0;
 		}
 
 		p + p {
 			margin-top: vw(19);
+
+			@include media-max(md) {
+				margin-top: vw-m(18);
+			}
 		}
 	}
 }
