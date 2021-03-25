@@ -6,6 +6,11 @@
 	text-transform: uppercase;
 	font-weight: 500;
 
+	@include media-max(md) {
+		font-size: vw-m(38);
+		line-height: 1.15789;
+	}
+
 	span {
 		display: block;
 	}

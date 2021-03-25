@@ -24,7 +24,7 @@ body {
 	flex-direction: column;
 
 	background-color: $color-smoky;
-	//min-width: 375px;
+	min-width: 375px;
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
@@ -34,6 +34,11 @@ body {
 	font-weight: 300;
 	-webkit-locale: auto;
 	white-space: normal;
+
+	@include media-max(md) {
+		font-size: vw-m(15);
+		line-height: vw-m(18);
+	}
 
 	main {
 		flex-grow: 1;

@@ -1,0 +1,39 @@
+.share {
+	display: flex;
+
+	@include media-max(md) {
+		display: block;
+	}
+
+	&__hint {
+		font-family: $font-family--secondary;
+
+		@include text(vw(17), 1.05882);
+		text-transform: uppercase;
+		font-weight: 400;
+		writing-mode: vertical-lr;
+		transform: rotate(180deg);
+		align-self: flex-end;
+
+		@include media-max(md) {
+			margin-bottom: vw-m(20);
+			writing-mode: initial;
+			transform: rotate(0);
+
+			@include text(vw-m(17), 1.05882);
+		}
+	}
+
+	&__social {
+		margin-left: 15px;
+		align-self: flex-end;
+
+		@include media-max(md) {
+			margin-left: 0;
+		}
+	}
+
+	@include media-max(md) {
+		padding: vw-m(28) vw-m(15) vw-m(40);
+	}
+}

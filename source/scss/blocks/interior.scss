@@ -1,29 +1,88 @@
 .interior {
 	overflow: hidden;
 
+	@include media-max(md) {
+	}
+
 	&__inner {
 		position: relative;
-		display: flex;
 		padding-right: vw(241);
-
 		padding-bottom: vw(366);
 
-		& > * {
-			align-self: flex-end;
+		display: grid;
+		grid-template-columns: 1fr vw(534);
+		grid-template-rows: repeat(3, auto);
+
+		@include media-max(md) {
+			display: flex;
+			flex-direction: column;
+
+			padding-right: vw-m(15);
+			padding-bottom: vw-m(24);
 		}
 	}
 
-	&__main {
-		//margin-bottom: vw(12);
+	&__header {
+		grid-column-start: 1;
+		grid-row-start: 2;
+		margin-right: vw(-109);
+
+		@include media-max(md) {
+			position: relative;
+			z-index: 1;
+			min-width: vw-m(375);
+			margin-right: 0;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: row-reverse;
+		flex-wrap: wrap;
+
+		grid-column-start: 1;
+		grid-row-start: 3;
+
+		@include media-max(md) {
+			display: block;
+			order: 1;
+		}
 	}
 
 	&__aside {
 		width: vw(534);
-		margin-left: vw(-109);
+		//margin-left: vw(-109);
 		flex-shrink: 0;
+
+		grid-column-start: 2;
+		grid-row-start: 1;
+		grid-row-end: 4;
 
 		img {
 			@include image-block;
+		}
+
+		@include media-max(md) {
+			position: relative;
+			width: 100vw;
+			height: vw-m(562);
+			margin-left: vw-m(-15);
+			margin-bottom: vw-m(44);
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: vw-m(-93);
+				left: 0;
+				width: 100%;
+				height: vw-m(93);
+				background-color: $color-default-white;
+				pointer-events: none;
+			}
+
+			img {
+				margin-top: vw-m(-93);
+			}
 		}
 	}
 
@@ -33,15 +92,11 @@
 		bottom: 0;
 		width: vw(251);
 
-		&-info {
-			display: flex;
-
-			& > * {
-				align-self: flex-end;
-			}
-		}
-
-		&-hint {
+		@include media-max(md) {
+			right: vw-m(7);
+			bottom: vw-m(-123);
+			width: vw-m(176);
+			filter: drop-shadow(0px vw-m(4) vw-m(4) rgba(0, 0, 0, 0.25));
 		}
 
 		&-image {
@@ -50,12 +105,38 @@
 
 			img {
 				@include image-block;
+
+				&:last-child {
+					display: none;
+				}
+			}
+
+			@include media-max(md) {
+				position: relative;
+				margin-top: 0; // vw-m(-53);
+
+				&::before {
+					content: "";
+					position: absolute;
+					z-index: 1;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+
+					border: solid vw-m(8) $color-default-white;
+				}
+
+				img {
+					&:first-child {
+						display: none;
+					}
+					&:last-child {
+						display: block;
+					}
+				}
 			}
 		}
-	}
-
-	&__social {
-		margin-left: 15px;
 	}
 
 	&__heading {
@@ -73,6 +154,11 @@
 				background-repeat: no-repeat;
 				background-size: cover;
 				background-image: url("../img/star.svg");
+
+				@include media-max(md) {
+					width: vw-m(29);
+					height: vw-m(29);
+				}
 			}
 		}
 
@@ -85,17 +171,19 @@
 
 		span:last-child {
 			margin-left: vw(82);
+			@include media-max(md) {
+				margin-left: 0;
+			}
 
 			&::before {
 				bottom: vw(68);
 				right: vw(85);
+
+				@include media-max(md) {
+					display: none;
+				}
 			}
 		}
-	}
-
-	&__content {
-		display: flex;
-		flex-wrap: wrap;
 	}
 
 	&__subheading {
@@ -105,6 +193,12 @@
 		padding-left: vw(170);
 		font-size: vw(47);
 		font-weight: 400;
+
+		@include media-max(md) {
+			margin-bottom: vw-m(24);
+			padding-left: vw-m(30);
+			font-size: vw-m(22);
+		}
 
 		&::before {
 			content: "";
@@ -118,6 +212,14 @@
 				$color-hasai 0%,
 				$color-hasai-2 100%
 			);
+
+			@include media-max(md) {
+				top: 50%;
+				left: vw-m(-15);
+				transform: translateY(-50%);
+				width: vw-m(40);
+				height: vw-m(17);
+			}
 		}
 	}
 
@@ -129,12 +231,40 @@
 		img {
 			@include image-block;
 		}
+
+		@include media-max(md) {
+			max-width: none;
+			width: 100vw;
+			margin-left: vw-m(-15);
+			margin-top: vw-m(26);
+			margin-right: 0;
+		}
+	}
+
+	&__mobile-heading {
+		display: none;
+
+		max-width: vw-m(186);
+		margin-bottom: 30px;
+		font-family: $font-family--secondary;
+
+		@include text(vw-m(12), 1.25);
+		font-weight: 400;
+		text-transform: uppercase;
+
+		@include media-max(md) {
+			display: block;
+		}
 	}
 
 	&__text {
 		max-width: vw(464);
 		color: $color-dark;
 		letter-spacing: 0.03em;
+
+		@include media-max(md) {
+			max-width: none;
+		}
 
 		p {
 			margin: 0;
@@ -143,10 +273,19 @@
 		p + p {
 			margin-top: vw(25);
 			transform: translateY(vw(-5));
+
+			@include media-max(md) {
+				margin-top: vw-m(25);
+				transform: translateY(vw-m(-5));
+			}
 		}
 	}
 }
 
 .interior + * {
 	margin-top: vw(-270);
+
+	@include media-max(md) {
+		margin-top: 0;
+	}
 }

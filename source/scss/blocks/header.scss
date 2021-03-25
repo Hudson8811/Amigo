@@ -8,6 +8,12 @@
 
 	padding: vw(42) 0 0;
 
+	@include media-max(md) {
+		position: static;
+		padding-top: vw-m(20);
+		padding-bottom: vw-m(28);
+	}
+
 	&__inner {
 		display: flex;
 		flex-wrap: wrap;
@@ -24,10 +30,19 @@
 	&__logo {
 		margin-top: vw(-42);
 		margin-right: vw(146);
+
+		@include media-max(md) {
+			margin-top: 0;
+			margin-left: vw-m(77);
+		}
 	}
 
 	&__nav {
 		margin-right: auto;
+
+		@include media-max(md) {
+			display: none;
+		}
 	}
 
 	&__image {
@@ -37,6 +52,10 @@
 
 		img {
 			@include image-block;
+		}
+
+		@include media-max(md) {
+			display: none;
 		}
 	}
 }

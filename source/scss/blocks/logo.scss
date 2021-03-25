@@ -5,7 +5,18 @@
 	padding: vw(96) vw(24) vw(24);
 	background-color: $color-dark;
 
-	img {
+	@include media-max(md) {
+		width: vw-m(54);
+		padding: 0;
+		background-color: transparent;
+	}
+
+	svg {
 		@include image-block;
+		fill: $color-default-white;
+
+		@include media-max(md) {
+			fill: $color-dark;
+		}
 	}
 }

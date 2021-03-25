@@ -151,12 +151,13 @@ gulp.task('copy', function() {
 
 gulp.task('copy:img', function() {
   return gulp.src([
-    'source/images/**/*.{jpg,png,svg}',
+    'source/img/**/*.{jpg,png,svg}',
     ], {
       base: 'source'
     })
+		.pipe(newer('build/img'))
     .pipe(gulp.dest('build'));
 });
 
 
-gulp.task('default', gulp.series('clean', 'copy', 'img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', 'sass',  'pug', 'server'));
+gulp.task('default', gulp.series('clean', 'copy', 'copy:img'/*, 'webp'*/, 'scripts', 'favicon', 'sprite', 'sass',  'pug', 'server'));

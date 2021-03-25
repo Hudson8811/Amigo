@@ -27,3 +27,8 @@
 	$resolutiond: 1920;
 	@return (($px/$resolutiond) * 100) + vw;
 }
+
+@function vw-m($px) {
+	$resolutiond: 375;
+	@return (($px/$resolutiond) * 100) + vw;
+}

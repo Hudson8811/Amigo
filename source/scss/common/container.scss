@@ -3,4 +3,9 @@
 	max-width: vw(1768);
 	margin: 0 auto;
 	padding: 0 vw(20);
+
+	@include media-max(md) {
+		max-width: none;
+		padding: 0 vw-m(15);
+	}
 }

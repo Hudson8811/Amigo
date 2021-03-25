@@ -1,5 +1,13 @@
 .webpage {
 	$self: &;
 
-	//padding-top: vw(214);
+	&__share {
+		position: absolute;
+		top: vw(401);
+		left: vw(1660);
+
+		@include media-max(md) {
+			position: static;
+		}
+	}
 }
