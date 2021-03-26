@@ -1,0 +1,19 @@
+.pro-style__slide.slide.swiper-slide
+	.slide__image
+		img(src="img/slider/slide-bg.jpg", srcset="img/slider/slide-bg@2x.jpg 2x", width="1072", height="712", alt="")
+
+		.slide__video.video(data-aos="fade-in")
+			video
+				source(src="video/video.mp4", type="video/mp4")
+				source(src="video/video.webm", type="video/webm")
+			.video__poster
+				img(src="img/slider/poster.jpg", srcset="img/slider/poster@2x.jpg 2x", width="830", height="498", alt="")
+				button.video__btn(type="button")
+					+icon('play')(width="138", height="138")
+					span.visually-hidden Play
+	.slide__author
+		.slide__author-image(data-aos="fade-up")
+			img(src="img/slider/author-4.jpg", srcset="img/slider/author-4@2x.jpg 2x", width="198", height="201", alt="")
+		.slide__author-main
+			.slide__author-name(data-aos="fade-up") Павел Железнов
+			.slide__author-text(data-aos="fade-up") Сооснователь дизайн-студии P+Z выбирает четкие композиционные приемы, чистые формы и качественные натуральные материалы. Павел предпочитает сочетать классические практики в оформлении пространства с лаконичностью и функциональностью. В свои интерьеры он иногда добавляет абсолютно нестандартные решения, которые легко находят отклик в сердцах клиентов.

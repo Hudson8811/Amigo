@@ -47,18 +47,18 @@ block content
 			.pro-style__aside(data-aos="fade-up")
 				.pro-style__slider.swiper-container.__js_pro-style-slider
 					.swiper-wrapper
-						- let i = 0;
-						while i < 5
-							include modules/slide
-							- i++;
+						include modules/slide-1
+						include modules/slide-2
+						include modules/slide-3
+						include modules/slide-4
+						include modules/slide-5
 
-
-					.pro-style__paginate
+					.pro-style__paginate(data-aos="fade-up")
 					.pro-style__fraction
 						span.pro-style__fraction-current
 						| /
 						span.pro-style__fraction-total
-					.pro-style__nav
+					.pro-style__nav(data-aos="fade-up")
 						button.pro-style__nav-btn.pro-style__nav-btn--prev(type="button", aria-label="prev")
 							+icon('arrow-right')(width="39", height="39")
 						button.pro-style__nav-btn.pro-style__nav-btn--next(type="button", aria-label="next")
