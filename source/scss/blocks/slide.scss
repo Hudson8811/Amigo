@@ -25,7 +25,6 @@
 		position: absolute;
 		bottom: 0;
 		right: vw(18);
-		width: vw(830);
 
 		@include media-max(md) {
 			right: vw-m(8);
