@@ -66,9 +66,9 @@ function getScrollbarWidth() {
 			var toggle = video.find('.video__btn');
 			var poster = video.find('.video__poster');
 			var iframe = video.find('iframe');
-			var src = iframe.attr('src');
+			//var src = iframe.attr('src');
 
-			iframe.attr('data-src', src);
+			//iframe.attr('data-src', src);
 
 			toggle.on('click', function() {
 				iframe.attr('src', iframe.attr('data-src') + ending);
