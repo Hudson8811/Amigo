@@ -68,7 +68,7 @@ function getScrollbarWidth() {
 			var iframe = video.find('iframe');
 			var src = iframe.attr('src');
 
-			//iframe.attr('data-src', src);
+			iframe.attr('data-src', src);
 
 			toggle.on('click', function() {
 				iframe.attr('src', iframe.attr('data-src') + ending);
@@ -110,7 +110,7 @@ function getScrollbarWidth() {
 
 					videoBtn.on('click', function() {
 						$(this).parent().fadeOut(DURATION).addClass('hide');
-						$(this).parent().siblings().trigger('play');
+						//$(this).parent().siblings().trigger('play');
 					});
 
 					video.on('click', function() {
@@ -118,7 +118,7 @@ function getScrollbarWidth() {
 							videoPoster.fadeIn(DURATION).removeClass('hide');
 						}
 
-						video.trigger('pause');
+						//video.trigger('pause');
 					});
 
 
