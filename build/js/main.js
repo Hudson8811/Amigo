@@ -42,11 +42,41 @@ function getScrollbarWidth() {
 	var ending = '&autoplay=1';
 	var isPlay = false;
 
+
+					/*$('video').mediaelementplayer({
+					// Configuration
+						success: function(media) {
+							var isNative = /html5|native/i.test(media.rendererName);
+
+							var isYoutube = ~media.rendererName.indexOf('youtube');
+
+							// etc.
+						}
+					});*/
+
 	if (sl) {
 		var slideCount = sl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)').length;
 		var fraction = document.querySelector('.pro-style__fraction');
 
 		var video, videoPoster, videoBtn;
+
+		var vd = $('.video');
+		vd.each(function() {
+			var video = $(this);
+			var toggle = video.find('.video__btn');
+			var poster = video.find('.video__poster');
+			var iframe = video.find('iframe');
+			var src = iframe.attr('src');
+
+			//iframe.attr('data-src', src);
+
+			toggle.on('click', function() {
+				iframe.attr('src', iframe.attr('data-src') + ending);
+				poster.delay(500).fadeOut(DURATION).addClass('hide');
+			});
+
+
+		});
 
 		if (fraction) {
 			var current = fraction.querySelector('.pro-style__fraction-current');
@@ -71,7 +101,10 @@ function getScrollbarWidth() {
 					current.textContent = this.realIndex + 1;
 					total.textContent = slideCount;
 
-					/*video = $('.video video');
+
+
+
+					video = $('.video video');
 					videoPoster = $('.video__poster');
 					videoBtn = $('.video__btn');
 
@@ -86,30 +119,15 @@ function getScrollbarWidth() {
 						}
 
 						video.trigger('pause');
-					});*/
-
-					var vd = $('.video');
-
-					vd.each(function() {
-						var video = $(this);
-						var toggle = video.find('.video__btn');
-						var poster = video.find('.video__poster');
-						var iframe = video.find('iframe');
-						var src = iframe.attr('src');
-
-						iframe.attr('data-src', src);
-
-						toggle.on('click', function() {
-							poster.fadeOut(DURATION).addClass('hide');
-							iframe.attr('src', src + ending)
-						})
 					});
+
+
 
 				},
 				slideChange: function() {
 					current.textContent = this.realIndex + 1;
 
-					//video = $('.video video');
+					video = $('.video video');
 					videoPoster = $('.video__poster');
 
 					if (videoPoster.hasClass('hide')) {
@@ -118,7 +136,7 @@ function getScrollbarWidth() {
 					}
 
 					var iframe = $('iframe');
-					iframe.attr('src', iframe.attr('data-src'));
+					iframe.attr('src', '');
 
 					//video.trigger('pause');
 				},
